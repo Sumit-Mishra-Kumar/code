@@ -1,0 +1,39 @@
+18.To replace all 0 with 1 in number
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int replaceZeroWithOne(int num) {
+    // Convert the integer to a string
+    char str[20];
+    sprintf(str, "%d", num);
+
+    // Iterate through each character of the string
+    for (int i = 0; str[i] != '\0'; i++) {
+        // If the character is '0', replace it with '1'
+        if (str[i] == '0') {
+            str[i] = '1';
+        }
+    }
+
+    // Convert the modified string back to an integer
+    int replacedNumber = atoi(str);
+    return replacedNumber;
+}
+
+int main() {
+    int num;
+
+    // Input a number from the user
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Replace all 0s with 1s
+    int replacedNumber = replaceZeroWithOne(num);
+
+    // Print the number with 0 replaced with 1
+    printf("Number with all 0s replaced with 1s: %d\n", replacedNumber);
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+6.FIBBONACCI SERIES
+
+#include <stdio.h>
+int main() 
+{
+    int a,nth;
+    printf("How many terms? ");
+    scanf("%d",&a);
+    int n1=0,n2=1;
+    int count=0;
+    if(a<=0)
+    {
+       printf("Please enter a positive integer");
+    }
+    else if(a==1)
+    {
+       printf("Fibonacci sequence upto %d ",a);
+       printf("is %d",n1);
+    }
+    else
+    {
+       printf("Fibonacci sequence:");
+       while(count<a)
+       {
+           printf("%d",n1);
+           nth = n1 + n2;
+           n1 = n2;
+           n2 = nth;
+           count += 1;
+       }
+    }
+}

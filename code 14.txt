@@ -1,0 +1,28 @@
+14.To check greatest among two number without using any condition or any loop
+
+#include <stdio.h>
+
+int findMax(int a, int b) {
+    int diff = a - b;
+    int sign = (diff >> 31) & 0x1; // Get sign bit (0 for positive, 1 for negative)
+    int max = a - sign * diff;     // If sign is 0, max = a; if sign is 1, max = b
+    return max;
+}
+
+int main() {
+    int num1, num2;
+    
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Find the maximum without using condition or loop
+    int maximum = findMax(num1, num2);
+
+    // Print the maximum
+    printf("Maximum of %d and %d is: %d\n", num1, num2, maximum);
+
+    return 0;
+}

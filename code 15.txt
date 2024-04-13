@@ -1,0 +1,28 @@
+15.To check lowest among two number without using any condition or any loop
+
+#include <stdio.h>
+
+int findMin(int a, int b) {
+    int diff = a - b;
+    int sign = (diff >> 31) & 0x1; // Get sign bit (0 for positive, 1 for negative)
+    int min = a + (sign & diff);     // If sign is 1, min = a; if sign is 0, min = a + diff
+    return min;
+}
+
+int main() {
+    int num1, num2;
+    
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Find the minimum without using condition or loop
+    int minimum = findMin(num1, num2);
+
+    // Print the minimum
+    printf("Minimum of %d and %d is: %d\n", num1, num2, minimum);
+
+    return 0;
+}

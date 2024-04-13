@@ -1,0 +1,36 @@
+4.PRIME NUMBER
+
+#include <stdio.h>
+int main()
+{
+    int a,flag=0;
+    printf("Enter a number :");
+    scanf("%d",&a);
+    if(a==0 || a==1)
+    {
+        flag=0;
+    }
+    else
+    {
+        for(int i=2;i<a;i++)
+        {
+            if(a%i==0)
+            {
+                flag=0;
+                break;
+            }
+            else
+            {
+                flag=1;
+            }
+        }
+    }
+    if(flag==0)
+    {
+        printf("Not prime number");
+    }
+    else
+    {
+        printf("prime number");
+    }
+}
